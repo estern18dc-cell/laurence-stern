@@ -166,14 +166,10 @@ nav a[aria-current="page"]{color:var(--bg);background:var(--fg)}
 .hero{padding-block:72px 40px}
 .hero h1{font-size:clamp(44px,9vw,96px);line-height:.95;letter-spacing:-.045em;font-weight:700;margin:0 0 20px;text-wrap:balance}
 .hero p{color:var(--dim);font-size:18px;max-width:56ch;margin:0}
-.stats{display:flex;flex-wrap:wrap;gap:32px;margin-top:32px;font-family:var(--mono);font-size:13px;color:var(--dim)}
-.stats b{display:block;font-family:var(--sans);font-size:28px;font-weight:600;color:var(--fg);letter-spacing:-.02em}
-.feature{display:block;border:1px solid var(--fg);border-radius:16px;padding:28px;margin-bottom:48px;text-decoration:none}
-.tag{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
-.feature h2{font-size:clamp(26px,4vw,36px);letter-spacing:-.03em;line-height:1.1;margin:10px 0 10px;text-wrap:balance}
-.feature p{color:var(--dim);max-width:60ch;margin:0 0 18px}
 .tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
 .tools h2{font-size:22px;letter-spacing:-.02em;margin:0}
+.tools.top{padding-block:48px 16px;border-bottom:1px solid var(--line);margin:0}
+.tools h1{font-size:clamp(36px,6vw,56px);letter-spacing:-.04em;line-height:1;margin:0}
 .search{flex:1 1 240px;max-width:320px;background:transparent;color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:10px 16px;font:inherit;font-size:14px}
 .search::placeholder{color:var(--dim)}
 .year{display:grid;grid-template-columns:96px 1fr;gap:0 24px;border-top:1px solid var(--line)}
@@ -194,7 +190,7 @@ nav a[aria-current="page"]{color:var(--bg);background:var(--fg)}
 .timeline li{display:grid;grid-template-columns:96px 1fr;gap:24px;padding:14px 0;border-bottom:1px solid var(--line)}
 .timeline span{font-family:var(--mono);font-size:14px;color:var(--dim)}
 footer{margin-top:72px;border-top:1px solid var(--line);padding-block:24px 48px;font-size:14px;color:var(--dim)}
-@media (max-width:600px){.year,.timeline li{grid-template-columns:1fr;gap:4px}.year > h3{padding-top:16px}.hero{padding-block:48px 32px}.feature{padding:22px}}
+@media (max-width:600px){.year,.timeline li{grid-template-columns:1fr;gap:4px}.year > h3{padding-top:16px}.hero{padding-block:48px 32px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 """
 
@@ -236,42 +232,19 @@ def story_links(doc):
     return [("Read PDF", PDF + doc.upper() + ".pdf"), ("CIA record", REC + doc)]
 
 
-def year_of(s):
-    return s[1][:4]
-
-
 def build_stories():
-    featured, rest = STORIES[0], sorted(STORIES[1:], key=lambda s: s[1])
-    fd, _, ft, fs, fdoc = featured
-    years = {}
-    for s in rest:
-        years.setdefault(year_of(s), []).append(s)
-    groups = ""
-    for y, items in years.items():
-        rows = "".join(
-            f'<article class="row" data-q="{(t + " " + x).lower().replace(chr(34), "")}">'
-            f'<div class="date">{d}</div><h4>{t}</h4><p>{x}</p>{buttons(story_links(doc))}</article>'
-            for d, _, t, x, doc in items)
-        groups += f'<section class="year"><h3>{y}</h3><div class="rows">{rows}</div></section>'
-    first, last = min(s[1] for s in STORIES)[:4], max(s[1] for s in STORIES)[:4]
-    body = f"""<section class="hero">
-<h1>Laurence Stern</h1>
-<p>Reporter and editor, 1929–1979. His articles on the CIA, Congress and foreign policy, as clipped and filed by the agency he covered.</p>
-<div class="stats"><div><b>{len(STORIES)}</b>stories</div><div><b>{first}–{last}</b>years covered</div><div><b>{len(FILES)}</b>files about him</div></div>
-</section>
-<a class="feature" href="{PDF + fdoc.upper()}.pdf" target="_blank" rel="noopener">
-<div class="tag">Featured · {fd}</div>
-<h2>{ft}</h2>
-<p>{fs}</p>
-<span class="btn">Read PDF ↗</span>
-</a>
-<div class="tools"><h2>All stories</h2><input class="search" id="q" type="search" placeholder="Search stories" aria-label="Search stories"></div>
-<div id="list">{groups}</div>
+    ordered = [STORIES[0]] + sorted(STORIES[1:], key=lambda s: s[1])
+    rows = "".join(
+        f'<article class="row" data-q="{(t + " " + x).lower().replace(chr(34), "")}">'
+        f'<div class="date">{d}</div><h4>{t}</h4><p>{x}</p>{buttons(story_links(doc))}</article>'
+        for d, _, t, x, doc in ordered)
+    body = f"""<div class="tools top"><h1>Stories</h1><input class="search" id="q" type="search" placeholder="Search stories" aria-label="Search stories"></div>
+<div class="rows list">{rows}</div>
 <p class="empty" id="none" hidden>No stories match that search.</p>"""
     script = """<script>
 const q=document.getElementById('q'),none=document.getElementById('none');
 q.addEventListener('input',()=>{const v=q.value.trim().toLowerCase();let any=false;
-document.querySelectorAll('.year').forEach(sec=>{let n=0;sec.querySelectorAll('.row').forEach(r=>{const m=!v||r.dataset.q.includes(v);r.hidden=!m;if(m)n++});sec.hidden=!n;if(n)any=true});
+document.querySelectorAll('.row').forEach(r=>{const m=!v||r.dataset.q.includes(v);r.hidden=!m;if(m)any=true});
 none.hidden=any;});
 </script>"""
     return page("stories", "Laurence Stern", body, script)

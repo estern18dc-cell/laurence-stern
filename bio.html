@@ -27,14 +27,10 @@ nav a[aria-current="page"]{color:var(--bg);background:var(--fg)}
 .hero{padding-block:72px 40px}
 .hero h1{font-size:clamp(44px,9vw,96px);line-height:.95;letter-spacing:-.045em;font-weight:700;margin:0 0 20px;text-wrap:balance}
 .hero p{color:var(--dim);font-size:18px;max-width:56ch;margin:0}
-.stats{display:flex;flex-wrap:wrap;gap:32px;margin-top:32px;font-family:var(--mono);font-size:13px;color:var(--dim)}
-.stats b{display:block;font-family:var(--sans);font-size:28px;font-weight:600;color:var(--fg);letter-spacing:-.02em}
-.feature{display:block;border:1px solid var(--fg);border-radius:16px;padding:28px;margin-bottom:48px;text-decoration:none}
-.tag{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
-.feature h2{font-size:clamp(26px,4vw,36px);letter-spacing:-.03em;line-height:1.1;margin:10px 0 10px;text-wrap:balance}
-.feature p{color:var(--dim);max-width:60ch;margin:0 0 18px}
 .tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
 .tools h2{font-size:22px;letter-spacing:-.02em;margin:0}
+.tools.top{padding-block:48px 16px;border-bottom:1px solid var(--line);margin:0}
+.tools h1{font-size:clamp(36px,6vw,56px);letter-spacing:-.04em;line-height:1;margin:0}
 .search{flex:1 1 240px;max-width:320px;background:transparent;color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:10px 16px;font:inherit;font-size:14px}
 .search::placeholder{color:var(--dim)}
 .year{display:grid;grid-template-columns:96px 1fr;gap:0 24px;border-top:1px solid var(--line)}
@@ -55,7 +51,7 @@ nav a[aria-current="page"]{color:var(--bg);background:var(--fg)}
 .timeline li{display:grid;grid-template-columns:96px 1fr;gap:24px;padding:14px 0;border-bottom:1px solid var(--line)}
 .timeline span{font-family:var(--mono);font-size:14px;color:var(--dim)}
 footer{margin-top:72px;border-top:1px solid var(--line);padding-block:24px 48px;font-size:14px;color:var(--dim)}
-@media (max-width:600px){.year,.timeline li{grid-template-columns:1fr;gap:4px}.year > h3{padding-top:16px}.hero{padding-block:48px 32px}.feature{padding:22px}}
+@media (max-width:600px){.year,.timeline li{grid-template-columns:1fr;gap:4px}.year > h3{padding-top:16px}.hero{padding-block:48px 32px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
 </head>
