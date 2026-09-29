@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Files · Laurence Stern</title>
+<meta name="description" content="Laurence Stern's reporting and the CIA's files on him, from the CIA FOIA Reading Room.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#000;--fg:#fff;--dim:rgba(255,255,255,.62);--line:rgba(255,255,255,.16);--hover:rgba(255,255,255,.06);
+--sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"Geist Mono",ui-monospace,Menlo,monospace;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible,input:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.bar{position:sticky;top:0;z-index:10;background:rgba(0,0,0,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.bar-in,.wrap{max-width:960px;margin:0 auto;padding-inline:20px}
+.bar-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+.logo{font-weight:600;letter-spacing:-.01em;text-decoration:none}
+nav{display:flex;gap:4px}
+nav a{font-size:14px;text-decoration:none;color:var(--dim);padding:6px 12px;border-radius:999px}
+nav a:hover{color:var(--fg)}
+nav a[aria-current="page"]{color:var(--bg);background:var(--fg)}
+.hero{padding-block:72px 40px}
+.hero h1{font-size:clamp(44px,9vw,96px);line-height:.95;letter-spacing:-.045em;font-weight:700;margin:0 0 20px;text-wrap:balance}
+.hero p{color:var(--dim);font-size:18px;max-width:56ch;margin:0}
+.stats{display:flex;flex-wrap:wrap;gap:32px;margin-top:32px;font-family:var(--mono);font-size:13px;color:var(--dim)}
+.stats b{display:block;font-family:var(--sans);font-size:28px;font-weight:600;color:var(--fg);letter-spacing:-.02em}
+.feature{display:block;border:1px solid var(--fg);border-radius:16px;padding:28px;margin-bottom:48px;text-decoration:none}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
+.feature h2{font-size:clamp(26px,4vw,36px);letter-spacing:-.03em;line-height:1.1;margin:10px 0 10px;text-wrap:balance}
+.feature p{color:var(--dim);max-width:60ch;margin:0 0 18px}
+.tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+.tools h2{font-size:22px;letter-spacing:-.02em;margin:0}
+.search{flex:1 1 240px;max-width:320px;background:transparent;color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:10px 16px;font:inherit;font-size:14px}
+.search::placeholder{color:var(--dim)}
+.year{display:grid;grid-template-columns:96px 1fr;gap:0 24px;border-top:1px solid var(--line)}
+.year > h3{margin:0;padding-top:22px;font-family:var(--mono);font-size:14px;font-weight:500;color:var(--dim)}
+.rows{min-width:0}
+.row{padding:20px 0;border-bottom:1px solid var(--line);min-width:0}
+.row:last-child{border-bottom:0}
+.row .date{font-family:var(--mono);font-size:12px;color:var(--dim);font-variant-numeric:tabular-nums}
+.row h4{font-size:19px;font-weight:600;letter-spacing:-.015em;line-height:1.3;margin:4px 0 6px;text-wrap:balance}
+.row p{color:var(--dim);margin:0 0 12px;max-width:66ch}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.btn{font-family:var(--mono);font-size:12px;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 12px;transition:background .15s,color .15s,border-color .15s}
+.btn:hover{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.empty{color:var(--dim);padding:24px 0}
+.prose{font-size:18px;max-width:64ch}
+.prose p{margin:0 0 1.1em}
+.timeline{list-style:none;margin:40px 0 0;padding:0;border-top:1px solid var(--line)}
+.timeline li{display:grid;grid-template-columns:96px 1fr;gap:24px;padding:14px 0;border-bottom:1px solid var(--line)}
+.timeline span{font-family:var(--mono);font-size:14px;color:var(--dim)}
+footer{margin-top:72px;border-top:1px solid var(--line);padding-block:24px 48px;font-size:14px;color:var(--dim)}
+@media (max-width:600px){.year,.timeline li{grid-template-columns:1fr;gap:4px}.year > h3{padding-top:16px}.hero{padding-block:48px 32px}.feature{padding:22px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<header class="bar"><div class="bar-in"><a class="logo" href="./">Laurence Stern</a><nav aria-label="Site"><a href="./">Stories</a><a href="files.html" aria-current="page">Files</a><a href="bio.html">Bio</a></nav></div></header>
+<main class="wrap">
+<section class="hero">
+<h1>Files</h1>
+<p>Internal CIA records that mention Stern or respond to his reporting, plus press items about his career.</p>
+</section>
+<section class="year"><h3>7 items</h3><div class="rows"><article class="row"><div class="date">Aug 21, 1968 · New York Times</div><h4>Editors Reassigned by Washington Post</h4><p>Stern, national editor for the previous three years, moves to the Post's investigative reporting team.</p><div class="btns"><a class="btn" href="https://www.cia.gov/readingroom/document/cia-rdp88-01314r000300380135-3" target="_blank" rel="noopener">Record ↗</a><a class="btn" href="https://www.cia.gov/readingroom/docs/CIA-RDP88-01314R000300380135-3.pdf" target="_blank" rel="noopener">PDF ↗</a></div></article><article class="row"><div class="date">Oct 17, 1970 · Newspaper clipping</div><h4>Promotions Announced for Eight Post Editors</h4><p>Stern is named assistant managing editor for Style.</p><div class="btns"><a class="btn" href="https://www.cia.gov/readingroom/document/cia-rdp88-01314r000300380107-4" target="_blank" rel="noopener">Record ↗</a><a class="btn" href="https://www.cia.gov/readingroom/docs/CIA-RDP88-01314R000300380107-4.pdf" target="_blank" rel="noopener">PDF ↗</a></div></article><article class="row"><div class="date">Jul 10, 1973 · CIA legislative journal</div><h4>Journal, Office of Legislative Counsel</h4><p>A CIA officer asks Rep. Lucien Nedzi to help counter Stern's story that Richard Helms misled the Senate about the agency's domestic role. Nedzi says Stern used little of a long interview because it did not fit his thesis.</p><div class="btns"><a class="btn" href="https://www.cia.gov/readingroom/document/cia-rdp75b00380r000100080090-8" target="_blank" rel="noopener">Record ↗</a><a class="btn" href="https://www.cia.gov/readingroom/docs/CIA-RDP75B00380R000100080090-8.pdf" target="_blank" rel="noopener">PDF ↗</a></div></article><article class="row"><div class="date">Jul 10, 1973 · CIA memo</div><h4>Briefing of the CIA Subcommittee of Senate Armed Services</h4><p>A follow-up item: a paper for Senator Symington on the Helms statement “as reported in the Laurence Stern article.”</p><div class="btns"><a class="btn" href="https://www.cia.gov/readingroom/document/cia-rdp75b00380r000200010126-4" target="_blank" rel="noopener">Record ↗</a><a class="btn" href="https://www.cia.gov/readingroom/docs/CIA-RDP75B00380R000200010126-4.pdf" target="_blank" rel="noopener">PDF ↗</a></div></article><article class="row"><div class="date">Jul 12, 1973 · CIA legislative journal</div><h4>Journal, Office of Legislative Counsel</h4><p>House Armed Services staff ask the CIA for a memo on the context of statements in Stern's article, after questions from Rep. William Bray.</p><div class="btns"><a class="btn" href="https://www.cia.gov/readingroom/document/cia-rdp75b00380r000200050091-9" target="_blank" rel="noopener">Copy 1 ↗</a><a class="btn" href="https://www.cia.gov/readingroom/document/cia-rdp75b00380r000100080079-1" target="_blank" rel="noopener">Copy 2 ↗</a></div></article><article class="row"><div class="date">Jun 26, 1974 · CIA legislative journal</div><h4>Journal, Office of Legislative Counsel</h4><p>A Senate staffer asks for a copy of the CIA Director's secrecy proposal after reading Stern's article about it that day.</p><div class="btns"><a class="btn" href="https://www.cia.gov/readingroom/document/cia-rdp75b00380r000600200032-3" target="_blank" rel="noopener">Record ↗</a><a class="btn" href="https://www.cia.gov/readingroom/docs/CIA-RDP75B00380R000600200032-3.pdf" target="_blank" rel="noopener">PDF ↗</a></div></article><article class="row"><div class="date">Jan 13, 1975 · CIA memo</div><h4>Allegations re Intercept of George Meany's Mail</h4><p>After Stern reported that the CIA read AFL-CIO president George Meany's mail, the agency searched its files and found no evidence of an intercept.</p><div class="btns"><a class="btn" href="https://www.cia.gov/readingroom/document/01435020" target="_blank" rel="noopener">Record ↗</a></div></article></div></section>
+</main>
+<footer class="wrap">All documents come from the <a href="https://www.cia.gov/readingroom/search/site/laurence%20stern">CIA FOIA Electronic Reading Room</a>. Summaries are based on the archive's OCR text, which is often garbled, so check the PDFs for exact wording.</footer>
+
+</body>
+</html>
